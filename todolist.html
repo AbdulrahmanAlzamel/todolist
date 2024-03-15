@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>To-Do-Liste</title>
+    <style>
+    body {
+    
+    background-color: #1d1d1d;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.todo-container {
+    text-align: center;
+    background-color: #e3e3e3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    padding: 8px;
+    margin-right: 8px;
+}
+
+button {
+    padding: 3px;
+    
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid #920000;
+    border-radius: 4px;
+}
+
+completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h1>To-Do-Liste</h1>
+        <input type="text" id="taskInput" >
+        <button >Aufgabe hinzufügen</button>
+        <ul id="taskList">
+            <li>
+                <input type="checkbox" value="">
+                <span></span>
+                <button>x</button>
+            </li>
+        </ul>
+    </div>
+    <script>
+    let taskInput = document.getElementById("taskInput");
+    let taskList = document.getElementById("taskList");
+    let btn3=document.querySelector("button");
+
+        function addTask(){
+            const taskInhalt=taskInput.value;
+                let li = document.createElement("li");
+                taskList.appendChild(li);
+                let checkBox=document.createElement("input");
+                checkBox.setAttribute("type","checkbox");
+                li.appendChild(checkBox);
+                let neuTodo=document.createElement("span")
+                li.appendChild(neuTodo);
+
+                let deleteBtn = document.createElement("button");
+                
+               li.appendChild(deleteBtn);
+               
+                li.textContent = taskInhalt;
+                deleteBtn.textContent = "Löschen";
+                // deleteBtn.addEventListener("click",deleBtn);
+
+               
+
+            
+            };
+    // function deleBtn(e){
+    //         let deleBtn2= e.target
+    //          console.log(deleBtn2); 
+    //          taskList.removeChild(deleBtn2);
+
+    // }
+
+           
+        btn3.addEventListener("click",addTask);
+
+
+     
+        
+        
+    </script>
+</body>
+</html>
